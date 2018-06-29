@@ -9,20 +9,35 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.4/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lora|Merriweather|Noto+Serif|Playfair+Display|Roboto+Mono|Roboto+Slab" rel="stylesheet">
     <style>
         * {
             box-sizing: border-box;
         }
+
+        body {
+            background-image: url("assets/images/2144.jpg");
+            font-family: 'Merriweather', serif;
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+        }
         
         .trainingDay {
-            background-color: rgb(127, 70, 44);
+            background-color: #4dc3dd;
             color: white;
             text-align: center;
             padding: 10px, 10px, 10px, 10px;
         }
         
-        h1 {
+        h3 {
             padding-top: 10px;
+            margin: 25px, 0, 0, 0;
+        }
+
+        h6 {
+            margin: 0;
         }
         
         #topper {
@@ -33,6 +48,14 @@
             background-color: rgb(51, 122, 183);
             color: white;
             padding: 5px;
+            font-family: 'Roboto Slab', serif;
+            font-size: 17px;
+        }
+
+        .table .thead-light th {
+            color: #495057;
+            background-color: rgb(85, 153, 212);
+            border-color: rgb(85, 153, 212);
         }
         
         form,
@@ -40,24 +63,42 @@
             border: 2px solid rgb(51, 122, 183);
             border-radius: 5px;
             padding-bottom: 8px;
+            font-family: 'Playfair Display', serif;
         }
         
+        fieldset {
+            padding: 0;
+        }
+
         .form-group {
             margin-right: 8px;
             margin-left: 8px;
+            font-size: 16px;
+            color:#495057;
         }
         
+        label {
+            color: #444444;
+            font-size: 15px;
+        }
+
         #wr2 {
             padding-bottom: 50px;
+            font-family: 'Playfair Display', serif;
         }
         
         #submit-form {
             float: right;
         }
-        
-        footer {
-            background-color: rgb(127, 70, 44);
-            overflow: auto;
+
+        main {
+            flex: 1 0 auto;
+        }
+        .page-footer {
+            margin-top: 15px;
+            padding-top: 0px;
+            color: #e8eaf6;
+            background-color: #4dc3dd;
         }
         /* footer {*/
         /* padding: 30px 0; */
@@ -73,12 +114,13 @@
 </head>
 
 <body class="mx-auto my-0">
+    <main>
     <div class="container-fluid border-bottom-1">
         <div class="container mb-2 mt-0 pl-0">
             <div class="container">
                 <div class="page-header">
                     <header class="trainingDay">
-                        <h1>Anytime is Train Time</h1><br>
+                        <h3>Anytime is Train Time</h3><br>
                         <h6 id="topper">Choo Choo. Chee Chee.</h6>
                     </header>
                 </div>
@@ -106,7 +148,7 @@
                         <fieldset>
                             <h6 class="percy">Add Train</h6>
                             <div class="form-group">
-                                <label for="Train Name">Train Name</label>
+                                <label for="Train-Name">Train Name</label>
                                 <input type="text" class="form-control" id="trainInput">
                             </div>
                             <div class="form-group">
@@ -114,7 +156,7 @@
                                 <input type="text" class="form-control" id="destinationInput">
                             </div>
                             <div class="form-group">
-                                <label for="First Train Time">First Train Time (HH:mm - military time)</label>
+                                <label for="First_Train_Time">First Train Time (HH:mm - military time)</label>
                                 <input type="text" class="form-control" id="initialTime">
                             </div>
                             <div class="form-group">
@@ -127,14 +169,23 @@
                         </fieldset>
                     </form>
                 </div>
-                
-                <div class="fixed-bottom container-fluid section py-2 border-top-2">
-                    <footer class=" page-footer font-small blue py-2 mt-4">
-                        <div class="footer-copyright text-center">© 2018 Copyright </div>
-                    </footer>
+    </main>
+        <footer class="page-footer">
+            <div class="footer-copyright">
+                <div class="container">
+                � 2018 Copyright - All Rights Reserved
+                <a class="grey-text text-lighten-4 right" href="#!">Terms of Service</a>
                 </div>
             </div>
-        </div>
+        </footer>        
+    
+    <!-- <div class="fixed-bottom container-fluid section py-2 --> <!--border-top-2"> <footer class=" page-footer font-small blue py-2 mt-4">
+                        <div class="footer-copyright text-center">© 2018 Copyright 
+                        </div>
+                    </footer>
+    </div> -->
+    </div>
+</div>
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -143,6 +194,7 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
         <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+        
         <script src="assets/javascript/app.js"></script>
 </body>
 
