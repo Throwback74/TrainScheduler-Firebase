@@ -66,7 +66,6 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey) {
     console.log(destination);
     console.log(initialTime);
     console.log(frequencyMin);
-});
 
 //Calculating the ETA/Min Away Field -
 //Grab the initialTime (e.g. 3:00 PM or 15:00)
@@ -76,3 +75,25 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey) {
 //Take the min difference and use the modulus w/ the frequencyMin (e.g. 28 % 15 = 13)
 //Take frequencyMin and subtract the modulus (e.g. 15 - 13 = 2 min away)
 //Add to current time to find arrival time (e.g. 3:28 + 2 = 3:30)
+
+var initialTimeConverted = moment(initialTime, "HH:mm").subtract(1, "years");
+console.log(initialTimeConverted);
+
+var currentTime = moment();
+console.log("Current Time: " + moment(currentTime).format("hh:mm"));
+
+var diffTime = moment().diff(moment(initialTimeConverted), "minutes");
+console.log("Difference in Time: " + diffTime);
+
+var remainder = diffTime % frequencyMin;
+console.log("Remainder: " + remainder);
+
+var tMinusTrain = frequencyMin - remainder;
+console.log("Minutes until next train: " + tMinusTrain);
+
+var nextTrain = moment(moment().add(tMinusTrain, "minutes")).format("hh:mm A");
+console.log("Next Train Arrives at: " + nextTrain);
+
+$("#trainSchedule > tbody").append("<tr><td>" + trainName + "</td><td>" + destination + "</td><td>" +
+frequencyMin + "</td><td>" + nextTrain + "</td><td>" + tMinusTrain + "</td></tr>");
+});

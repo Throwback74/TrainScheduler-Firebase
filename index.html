@@ -56,7 +56,7 @@
         }
         
         footer {
-            background-color: gray;
+            background-color: rgb(127, 70, 44);
             overflow: auto;
         }
         /* footer {*/
@@ -85,7 +85,7 @@
             </div>
             <div class="container mt-2">
                 <div class="wrapper">
-                    <table class="table">
+                    <table class="table" id="trainSchedule">
                         <h6 class="percy">Current Train Schedule</h6>
                         <thead class="thead-light">
                             <tr>
@@ -97,13 +97,6 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <th scope="row" id="trainNameRow">#name</th>
-                                <td id="destinationRow">#destination</td>
-                                <td id="frequencyRow">#FrequencyinMin</td>
-                                <td id="nextArrivalRow">#calulatedNextArrival</td>
-                                <td id="minAwayRow">#minAway</td>
-                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -122,7 +115,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="First Train Time">First Train Time (HH:mm - military time)</label>
-                                <input type="time" class="form-control" id="initialTime">
+                                <input type="text" class="form-control" id="initialTime">
                             </div>
                             <div class="form-group">
                                 <label for="Frequency">Frequency (min)</label>
@@ -134,16 +127,10 @@
                         </fieldset>
                     </form>
                 </div>
-                <!-- <footer>
-            <div class="fixed-bottom container-fluid section py-2 border-top-2">
-                &copy; Copyright
-            </div>
-            </footer> -->
-                <div class="container-fluid">
-                    <footer class="fixed-bottom page-footer font-small blue pt-4 mt-4">
-                        <div class="footer-copyright text-center py-3">© 2018 Copyright:
-
-                        </div>
+                
+                <div class="fixed-bottom container-fluid section py-2 border-top-2">
+                    <footer class=" page-footer font-small blue py-2 mt-4">
+                        <div class="footer-copyright text-center">© 2018 Copyright </div>
                     </footer>
                 </div>
             </div>
@@ -154,8 +141,8 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-        <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/luxon@1.3.0/build/cjs-browser/luxon.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
         <script src="assets/javascript/app.js"></script>
 </body>
 
