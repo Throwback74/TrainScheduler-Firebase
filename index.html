@@ -94,21 +94,37 @@
         main {
             flex: 1 0 auto;
         }
+
+        .valign-wrapper {
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-align-items: center;
+                -ms-flex-align: center;
+                    align-items: center;
+            }
+
         .page-footer {
             margin-top: 15px;
             padding-top: 0px;
             color: #e8eaf6;
             background-color: #4dc3dd;
+            max-width: 675px;
+            position: relative;
         }
-        /* footer {*/
-        /* padding: 30px 0; */
-        /* clear: both; */
-        /* font-size: 12px;
-            color: #ccc;
-            text-align: center;
-            background: #666;
-            border-top: 8px solid #4aaaa5; */
-        /* } */
+    
+        .container-Fluid {
+            display: flex;
+            }
+
+        .container-Fluid .row {
+            margin: 0 auto;
+            }
+
+        .row {
+            margin-bottom: 0;
+        }
+
     </style>
 
 </head>
@@ -170,22 +186,27 @@
                     </form>
                 </div>
     </main>
+            
         <footer class="page-footer">
-            <div class="footer-copyright">
-                <div class="container">
-                � 2018 Copyright - All Rights Reserved
-                <a class="grey-text text-lighten-4 right" href="#!">Terms of Service</a>
+                <div class="container-fluid">
+                    <div class="row">
+                    <div class="col l6 s12">
+                        
+                    </div>
+                    <div class="col l4 offset-l2 s12">
+                        
+                    </div>
+                    </div>
                 </div>
-            </div>
-        </footer>        
-    
-    <!-- <div class="fixed-bottom container-fluid section py-2 --> <!--border-top-2"> <footer class=" page-footer font-small blue py-2 mt-4">
-                        <div class="footer-copyright text-center">© 2018 Copyright 
-                        </div>
-                    </footer>
-    </div> -->
+                <div class="footer-copyright">
+                    <div class="container">
+                    © 2018 Copyright Text
+                    <a class="grey-text text-lighten-4 right" href="#!"></a>
+                    </div>
+                </div>
+                </footer>
     </div>
-</div>
+        </div>
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
